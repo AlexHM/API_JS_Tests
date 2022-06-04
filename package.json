@@ -5,13 +5,17 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev-start": "nodemon src/index.js"
+    "dev-start": "cross-env NODE_ENV=development && nodemon src/index.js",
+    "test": "cross-env NODE_ENV=test && set NODE_OPTIONS=--experimental-vm-modules && jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "2.0.16"
+    "cross-env": "^7.0.3",
+    "jest": "^28.1.0",
+    "nodemon": "2.0.16",
+    "supertest": "^6.2.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
